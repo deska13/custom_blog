@@ -1,0 +1,45 @@
+{% block article %}
+    <div class="accordion-item">
+        <h2 
+            class="accordion-header" 
+            id="heading{{article.get_id()}}"
+        >
+            <button 
+                class="accordion-button" 
+                type="button" 
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse{{article.get_id()}}"
+                aria-expanded="true" 
+                aria-controls="collapse{{article.get_id()}}"
+            >
+                <strong>
+                    {{article.get_author().get_login()}} написал: {{article.get_title()}}
+                </strong>
+            </button>
+        </h2>
+
+        <div 
+            id="collapse{{article.get_id()}}" 
+            class="accordion-collapse collapse show"
+            aria-labelledby="heading{{article.get_id()}}"
+            data-bs-parent="#accordionExample"
+        >
+            <div class="accordion-body">
+                {{article.get_content()}}
+                {% if article.get_comments() %}
+
+                    <p>Комментарии:</p>
+                    {% for comment in article.get_comments() %}
+                        {% include 'comment/content.html' %}
+                    {% endfor %}
+
+                {% endif %}
+                {% if current_user.is_authenticated and current_user.get_id() == article.get_author().get_id() %}
+                <p>
+                    <a href="/delete_post/{{ article.get_id() }}">Удалить запись</a>
+                </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

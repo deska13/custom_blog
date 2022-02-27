@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div 
+    class="accordion" 
+    id="accordionExample"
+>
+    {% for article in articles %}
+        {% include 'article/content.html' article=article %}
+    {% endfor %}
+</div>
+<div>
+    <strong><a href="/add_post">Добавить запись</a></strong>
+</div>
+{% endblock %}
