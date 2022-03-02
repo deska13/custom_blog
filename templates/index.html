@@ -7,10 +7,10 @@
     id="accordionExample"
 >
     {% for article in articles %}
-        {% include 'article/content.html' article=article %}
+        {% include 'article/content.html' %}
     {% endfor %}
 </div>
-<div>
-    <strong><a href="/add_post">Добавить запись</a></strong>
-</div>
+<button class="btn btn-primary">
+    <strong><a href="/add_article" class="link-light">Добавить запись</a></strong>
+</button>
 {% endblock %}

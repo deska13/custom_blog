@@ -4,6 +4,7 @@ from werkzeug.security import check_password_hash
 
 class User(UserMixin):
     def __init__(self, id, login, password, remember_me = False):
+        print(id, login, password)
         self.id = id
         self.login = login
         self.password = password

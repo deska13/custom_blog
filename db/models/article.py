@@ -1,8 +1,9 @@
-from bd.models.comment import Comment
+from .comment import Comment
 
 
 class Article:
     def __init__(self, id, title, content, author):
+        print(id, title, content, author)
         self.id = id
         self.title = title
         self.content = content

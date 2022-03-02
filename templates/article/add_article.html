@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <p><strong>Добавить запись</strong></p>
+        <form action="/add_article" method="POST">
+            <label for="title">Название</label>
+            <input name="title" type="text"><br>
+            <label for="content">Содержание</label>
+            <input name="content" type="text">
+            <input type="submit" value="Отправить">
+        </form>
+    </div>
+{% endblock %}

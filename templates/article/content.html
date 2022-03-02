@@ -36,7 +36,7 @@
                 {% endif %}
                 {% if current_user.is_authenticated and current_user.get_id() == article.get_author().get_id() %}
                 <p>
-                    <a href="/delete_post/{{ article.get_id() }}">Удалить запись</a>
+                    <a href="/delete_article/{{ article.get_id() }}">Удалить запись</a>
                 </p>
                 {% endif %}
             </div>
