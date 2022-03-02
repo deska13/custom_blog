@@ -1,5 +1,5 @@
 import sqlite3
-from db.models import Article
+from db.models import *
 from flask_login import current_user
 
 from db.queries.user_query import get_user_by_id

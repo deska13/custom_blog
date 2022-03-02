@@ -3,7 +3,7 @@ from db.models import User
 
 
 def get_users():
-    conn = sqlite3.connect('./db/example.db')
+    conn = sqlite3.connect('C:/Users/deska/OneDrive/Рабочий стол/teach/learn_blog/custom_blog/db/example.db')
     cur = conn.cursor()
     cur.execute(f"""SELECT * FROM users;""")
     rows = cur.fetchall()
