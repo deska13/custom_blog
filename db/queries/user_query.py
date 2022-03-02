@@ -16,7 +16,7 @@ def get_users():
 
 
 def get_user_by_id(id):
-    conn = sqlite3.connect('./db/example.db')
+    conn = sqlite3.connect('C:/Users/deska/OneDrive/Рабочий стол/teach/learn_blog/custom_blog/db/example.db')
     cur = conn.cursor()
     cur.execute(f"""SELECT * FROM users WHERE user_id={id};""")
     row = cur.fetchone()
@@ -24,8 +24,9 @@ def get_user_by_id(id):
     conn.close()
     return User(row[0], row[1], row[2], row[3])
 
+
 def get_user(login):
-    conn = sqlite3.connect('./db/example.db')
+    conn = sqlite3.connect('C:/Users/deska/OneDrive/Рабочий стол/teach/learn_blog/custom_blog/db/example.db')
     cur = conn.cursor()
     cur.execute(f"""SELECT * FROM users WHERE f_name={login};""")
     row = cur.fetchone()
@@ -35,7 +36,7 @@ def get_user(login):
 
 
 def insert_user(login, password, remember_me):
-    conn = sqlite3.connect('./db/example.db')
+    conn = sqlite3.connect('C:/Users/deska/OneDrive/Рабочий стол/teach/learn_blog/custom_blog/db/example.db')
     cur = conn.cursor()
     cur.execute("""INSERT INTO users(f_name, password_hash, save_me) 
         VALUES(?,?,?);""", (login, password, remember_me))

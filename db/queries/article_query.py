@@ -6,7 +6,7 @@ from db.queries.user_query import get_user_by_id
 
 
 def get_articles():
-    conn = sqlite3.connect('./db/example.db')
+    conn = sqlite3.connect('C:/Users/deska/OneDrive/Рабочий стол/teach/learn_blog/custom_blog/db/example.db')
     cur = conn.cursor()
     cur.execute("""SELECT * FROM articles;""")
     rows = cur.fetchall()
@@ -26,7 +26,7 @@ def get_articles():
 
 
 def get_article(article_id):
-    conn = sqlite3.connect('./db/example.db')
+    conn = sqlite3.connect('C:/Users/deska/OneDrive/Рабочий стол/teach/learn_blog/custom_blog/db/example.db')
     cur = conn.cursor()
     cur.execute(f"""SELECT * FROM articles WHERE article_id={article_id};""")
     row = cur.fetchone()
@@ -45,7 +45,7 @@ def get_article(article_id):
 
 
 def insert_article(title, content):
-    conn = sqlite3.connect('./db/example.db')
+    conn = sqlite3.connect('C:/Users/deska/OneDrive/Рабочий стол/teach/learn_blog/custom_blog/db/example.db')
     cur = conn.cursor()
     cur.execute("""INSERT INTO articles(user_id, title, content) 
         VALUES(?,?,?);""", (current_user.id, title, content))
